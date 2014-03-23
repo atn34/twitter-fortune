@@ -11,6 +11,8 @@ fi
 
 TWITTER_HANDLE=$1
 
+curl -s http://greptweet.com/f/$TWITTER_HANDLE > /dev/null
+
 curl -s http://greptweet.com/u/$TWITTER_HANDLE/tweets.txt \
     | grep -v '\<RT\>\|\<http\|@' \
     | cut -f3 -d'|' \
